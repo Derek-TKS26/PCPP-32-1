@@ -14,12 +14,28 @@
 
 # ————————————————————————————— Basic Concepts ————————————————————————————————————————————————————
 
-
-
+# Handlers in Python's logging module are used to send log messages to different destinations, such as the console, files, or even external systems.
+# Formatter in logging module is a method to set log records' format.
 
 import logging
 
-logger = logging.getLogger() # root logger object
-hello_logger = logging.getLogger('hello') # the child of root logger object
-hello_world_logger = logging.getLogger('hello.world')  # the child logger of 'hello'
-recommended_logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.CRITICAL, filename='prod.log', filemode='a')
+
+# First argument:passes a logging level, the function similar to setLevel method. If the arg is omitted then
+# the default level is warming.
+
+# Second argument: creates a FileHandler object if omitted then the default Handler is StreamHandler which can
+# produces a str in the console.
+
+# Third argument: 'a' is the default model which means the new log will be appended in previous records.
+
+
+
+logger = logging.getLogger() # Create a logger object which can set the logging levels for you.
+
+logger.critical('Your CRITICAL message')
+logger.error('Your ERROR message')
+logger.warning('Your WARNING message')
+logger.info('Your INFO message')
+logger.debug('Your DEBUG message')
+
