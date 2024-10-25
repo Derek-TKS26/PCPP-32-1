@@ -12,7 +12,7 @@
 #—————————————————— Reading data from csv document ————————————————————
 import csv
 
-with open('contacts.csv', newline='') as csvfile:
+with open('../../OneDrive/Desktop/contacts.csv', newline='') as csvfile:
     reader = csv.reader(csvfile,delimiter=',')
     # newline='' argument is not absolutely indispensable,
     # but it's good practice when working with CSV files in Python.
